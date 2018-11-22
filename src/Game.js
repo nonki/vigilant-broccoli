@@ -1,15 +1,5 @@
 import React, { Component } from 'react';
-
-const api = process.env.REACT_APP_API_URL
-const getGame = (id) =>
-  fetch(`${api}/keys/${id}`)
-    .then(res =>
-      res.ok ? res.json() : Promise.reject("Failed to get something useful")
-    )
-    .then(apiData => {
-      return apiData
-    });
-
+import { getGame } from './Api.js';
 
 class Game extends Component {
   constructor(props) {
