@@ -7,3 +7,5 @@ export const getGame = (id) =>
     .then(apiData => {
       return apiData
     });
+
+export const checkAuth = (password) => 'milica' === password.toLowerCase()
