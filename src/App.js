@@ -8,9 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Games</h1>
-        <Game game="0" />
-        <Game game="1" />
-        <Game game="2" />
+        {[...Array(22).keys()].map(el => <Game game={el} />)}
       </div>
     );
   }
