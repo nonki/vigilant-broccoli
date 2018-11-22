@@ -15,9 +15,9 @@ class App extends Component {
   }
 }
 
-const api = 'http://localhost:8080/keys'
+const api = process.env.REACT_APP_API_URL
 const getGame = (id) =>
-  fetch(`${api}/${id}`)
+  fetch(`${api}/keys/${id}`)
     .then(res =>
       res.ok ? res.json() : Promise.reject("Failed to get something useful")
     )
