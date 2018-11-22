@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getGame } from './Api.js';
+import './Game.css';
 
 class Game extends Component {
   constructor(props) {
@@ -17,9 +18,17 @@ class Game extends Component {
   }
 
   render() {
+    if (this.state.game == null) {
+      return null
+    }
+
+    const g = this.state.game
     return(
       <div className="Game" game={this.props.gameId}>
-        {JSON.stringify(this.state.game)}
+        <span className="title">{g.title}</span>
+        <div className="key">
+          {g.key}
+        </div>
       </div>
     )
   }
