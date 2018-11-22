@@ -34,7 +34,6 @@ class Game extends Component {
   }
 
   _getGame(id) {
-    console.log('something');
     getGame(id).then(game => this.setState({ game }));
   }
 
