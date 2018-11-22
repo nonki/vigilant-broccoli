@@ -10,7 +10,7 @@ class Game extends Component {
   }
 
   _getGame(id) {
-    getGame(id).then(game => this.setState({ game }));
+    getGame(id).then(game => this.setState({ game })).catch(err => console.debug(err));
   }
 
   _releaseLink(key, e) {
