@@ -13,6 +13,11 @@ class Game extends Component {
     getGame(id).then(game => this.setState({ game }));
   }
 
+  _releaseLink(key, e) {
+    e.preventDefault();
+    window.open(`https://store.steampowered.com/account/registerkey?key=${key}`, "_blank");
+  }
+
   componentDidMount() {
     this._getGame(this.props.game)
   }
@@ -28,6 +33,9 @@ class Game extends Component {
         <span className="title">{g.title}</span>
         <div className="key">
           {g.key}
+          <div className="redeem">
+            <button onClick={this._releaseLink.bind(null, g.key)}>Redeem</button>
+          </div>
         </div>
       </div>
     )
