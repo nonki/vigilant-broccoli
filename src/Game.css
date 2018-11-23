@@ -8,4 +8,17 @@
 
 .Game {
   border: 1px solid black;
+  width: 300px;
+  background-color: var(--color2);
+  padding: var(--base-spacing);
+  margin: var(--base-spacing);
+  border-radius: 10px;
+}
+
+.redeemed {
+  background-color: var(--color4) !important;
+}
+
+.not-redeemed {
+  background-color: var(--color1) !important;
 }

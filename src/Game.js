@@ -6,18 +6,19 @@ class Game extends Component {
   constructor(props) {
     super(props);
 
+    const redeemed = localStorage.getItem(`game-${props.id}`);
     this.state = {
       id: props.id,
-      game: null
+      game: null,
+      redeemed: redeemed
     }
-  }
-
-  _getGame() {
   }
 
   _releaseLink(key, e) {
     e.preventDefault();
     window.open(`https://store.steampowered.com/account/registerkey?key=${key}`, "_blank");
+    this.setState({ redeemed: true })
+    localStorage.setItem(`game-${this.state.id}`, '1');
   }
 
   componentDidMount() {
@@ -31,14 +32,15 @@ class Game extends Component {
       return null
     }
 
+    const r = this.state.redeemed
     const g = this.state.game
     return(
-      <div className="Game" game={this.props.gameId}>
+      <div className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.gameId}>
         <span className="title">{g.title}</span>
         <div className="key">
           {g.key}
           <div className="redeem">
-            <button onClick={this._releaseLink.bind(null, g.key)}>Redeem</button>
+            <button onClick={this._releaseLink.bind(this, g.key)}>Redeem</button>
           </div>
         </div>
       </div>
