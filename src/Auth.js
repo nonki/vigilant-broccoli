@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { checkAuth } from './Api.js';
+import './Auth.css';
+
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 
 class Auth extends Component {
   constructor(props) {
@@ -27,10 +31,13 @@ class Auth extends Component {
   render() {
     return (
       <div className="Auth">
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <label htmlFor="password" className="site-password">Password</label>
-          <input type="password" name="password" className="site-password" value={this.state.password} onChange={this.handleChange.bind(this)} />
-          <button type="submit">Submit</button>
+        <form className="auth--parent" onSubmit={this.handleSubmit.bind(this)}>
+          <div className="auth--child">
+            <Input type="password" placeholder="password" className="site-password" value={this.state.password} onChange={this.handleChange.bind(this)} />
+          </div>
+          <div className="auth--child">
+            <Button type="submit">Submit</Button>
+          </div>
         </form>
       </div>
     )

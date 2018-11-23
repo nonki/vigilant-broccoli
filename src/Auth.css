@@ -1,0 +1,14 @@
+.Auth .auth--parent {
+  display: flex;
+  padding: var(--base-spacing);
+  margin: var(--base-spacing);
+  padding-top: 300px;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+
+.Auth .auth--child {
+  padding-bottom: 10px;
+}
