@@ -8,24 +8,27 @@
 
 .Game {
   border: 1px solid black;
-  width: 100%;
   background-color: var(--color2);
   padding: var(--base-spacing);
   margin: var(--base-spacing);
   border-radius: 10px;
   display: flex;
+  flex-grow: 1;
+  min-width: 300px;
+  max-width: 800px;
+  justify-content: space-evenly;
 }
 
 .Game .title {
-  width: 30%;
+  flex-grow: 2;
 }
 
 .Game .key {
-  width: 50%;
+  flex-grow: 3;
 }
 
 .Game .redeem {
-  width: 20%;
+  flex-grow: 1;
 }
 
 .redeemed {
