@@ -8,4 +8,13 @@ export const getGame = (id) =>
       return apiData
     });
 
-export const checkAuth = (password) => 'milica' === password.toLowerCase()
+export const checkAuth = (password) =>
+  fetch(`${mapi}/auth`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify({ password })
+    })
+    .then(res => res.ok);

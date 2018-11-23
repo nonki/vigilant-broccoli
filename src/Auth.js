@@ -14,13 +14,14 @@ class Auth extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const auth = checkAuth(this.state.password);
-    this.setState({password: ''});
-    if (!auth) {
-      alert('Wrong Password Scrub');
-    }
+    checkAuth(this.state.password).then(res => {
+      this.setState({password: ''});
+      if (!res) {
+        alert('Wrong Password Scrub');
+      }
 
-    this.props.handler(auth);
+      this.props.handler(res);
+    });
   }
 
   render() {

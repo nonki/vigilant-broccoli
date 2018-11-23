@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   setAuthed(isAuthed) {
+    console.log(isAuthed);
     localStorage.setItem('authed', isAuthed ? '1' : '');
     this.setState({authed: isAuthed});
   }
@@ -30,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Games</h1>
-        {[...Array(22).keys()].map(el => <Game game={el} />)}
+        {[...Array(3).keys()].map(el => <Game game={el} />)}
       </div>
     );
   }
