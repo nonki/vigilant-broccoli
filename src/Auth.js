@@ -28,7 +28,7 @@ class Auth extends Component {
     return (
       <div className="Auth">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <label for className="site-password">Password</label>
+          <label htmlFor className="site-password">Password</label>
           <input type="password" name="password" className="site-password" value={this.state.password} onChange={this.handleChange.bind(this)} />
           <button type="submit">Submit</button>
         </form>
