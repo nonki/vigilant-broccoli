@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getGame } from './Api.js';
 import './Game.css';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 class Game extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Game extends Component {
     const r = this.state.redeemed
     const g = this.state.game
     return(
-      <div className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.gameId}>
+      <Paper className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.gameId}>
         <div className="title">{g.title}</div>
         <div className="key">
           {g.key}
@@ -44,7 +45,7 @@ class Game extends Component {
         <div className="redeem">
           <Button variant="outlined" onClick={this._releaseLink.bind(this, g.key)}>Redeem</Button>
         </div>
-      </div>
+      </Paper>
     )
   }
 }
