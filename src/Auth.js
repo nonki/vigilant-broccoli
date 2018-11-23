@@ -16,6 +16,10 @@ class Auth extends Component {
     e.preventDefault();
     const auth = checkAuth(this.state.password);
     this.setState({password: ''});
+    if (!auth) {
+      alert('Wrong Password Scrub');
+    }
+
     this.props.handler(auth);
   }
 
