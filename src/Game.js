@@ -6,11 +6,13 @@ class Game extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { game: null }
+    this.state = {
+      id: props.id,
+      game: null
+    }
   }
 
-  _getGame(id) {
-    getGame(id).then(game => this.setState({ game })).catch(err => console.debug(err));
+  _getGame() {
   }
 
   _releaseLink(key, e) {
@@ -19,7 +21,9 @@ class Game extends Component {
   }
 
   componentDidMount() {
-    this._getGame(this.props.game)
+    getGame(this.state.id)
+      .then(game => this.setState({ game }))
+      .catch(err => console.debug(err));
   }
 
   render() {

@@ -5,3 +5,7 @@
 .Game .key {
   font-weight: bold;
 }
+
+.Game {
+  border: 1px solid black;
+}

@@ -1,15 +1,19 @@
-const mapi = process.env.REACT_APP_API_URL
-export const getGame = (id) =>
-  fetch(`${mapi}/keys/${id}`)
-    .then(res =>
-      res.ok ? res.json() : Promise.reject("Failed to get something useful")
-    )
-    .then(apiData => {
-      return apiData
-    });
+const API_BASE = process.env.REACT_APP_API_URL
+const fetchJSON = path =>
+  fetch(`${API_BASE}${path}`).then(res =>
+    res.ok
+      ? res.json()
+      : Promise.reject({
+          status: res.status,
+          statusText: res.statusText,
+          error: "Request failed"
+        })
+  )
 
+export const getGames = () => fetchJSON('/keys')
+export const getGame = (id) => fetchJSON(`/keys/${id}`)
 export const checkAuth = (password) =>
-  fetch(`${mapi}/auth`,
+  fetch(`${API_BASE}/auth`,
     {
       method: "POST",
       headers: {

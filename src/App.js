@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Game from './Game.js';
 import Auth from './Auth.js';
+import Games from './Games.js';
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Games</h1>
-        {[...Array(3).keys()].map(el => <Game game={el} />)}
+        <Games />
       </div>
     );
   }
