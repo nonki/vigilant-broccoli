@@ -42,7 +42,7 @@ class Game extends Component {
           {g.key}
         </div>
         <div className="redeem">
-          <Button variant="contained" onClick={this._releaseLink.bind(this, g.key)}>Redeem</Button>
+          <Button variant="outlined" onClick={this._releaseLink.bind(this, g.key)}>Redeem</Button>
         </div>
       </div>
     )
