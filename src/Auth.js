@@ -15,7 +15,8 @@ class Auth extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const auth = checkAuth(this.state.password);
-    alert(auth);
+    this.setState({password: ''});
+    this.props.handler(auth);
   }
 
   render() {
