@@ -30,7 +30,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1>Games</h1>
         <Games />
       </div>
     );
