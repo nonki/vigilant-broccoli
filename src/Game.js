@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getGame } from './Api.js';
 import './Game.css';
+import Button from '@material-ui/core/Button';
 
 class Game extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class Game extends Component {
           {g.key}
         </div>
         <div className="redeem">
-          <button onClick={this._releaseLink.bind(this, g.key)}>Redeem</button>
+          <Button variant="contained" onClick={this._releaseLink.bind(this, g.key)}>Redeem</Button>
         </div>
       </div>
     )
