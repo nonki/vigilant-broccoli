@@ -36,12 +36,12 @@ class Game extends Component {
     const g = this.state.game
     return(
       <div className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.gameId}>
-        <span className="title">{g.title}</span>
+        <div className="title">{g.title}</div>
         <div className="key">
           {g.key}
-          <div className="redeem">
-            <button onClick={this._releaseLink.bind(this, g.key)}>Redeem</button>
-          </div>
+        </div>
+        <div className="redeem">
+          <button onClick={this._releaseLink.bind(this, g.key)}>Redeem</button>
         </div>
       </div>
     )
