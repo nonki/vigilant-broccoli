@@ -30,14 +30,14 @@
   flex-grow: 1;
 }
 
-.redeemed {
+.revealed.redeemed {
   background-color: var(--color4) !important;
 }
 
-.not-redeemed {
+.revealed {
   background-color: var(--color1) !important;
-}
-
-.unrevealed {
-
+  -moz-transition: opacity 1s all;
+  -o-transition: opacity 1s all;
+  -webkit-transition: opacity 1s all;
+  transition: 1s all;
 }

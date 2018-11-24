@@ -51,10 +51,10 @@ class Game extends Component {
     }
 
     return(
-      <Paper className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.id}>
-        <div className="key">
+      <Paper className={"Game revealed " + (r && 'redeemed')} game={this.props.id}>
+        <Typography variant="body1" className="key">
           {g.key}
-        </div>
+        </Typography>
         <div className="redeem">
           <Button variant="outlined" onClick={this._releaseLink.bind(this, g.key)}>Redeem</Button>
         </div>
