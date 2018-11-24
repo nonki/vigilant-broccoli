@@ -4,22 +4,19 @@ import Game from './Game.js';
 import { getGames } from './Api.js'
 
 class Games extends Component {
-  constructor(props) {
-    super(props)
+  state = {
+    games: [],
+  };
 
-    this.state = {
-      games: []
-    }
-  }
-
-  componentDidMount() {
+  componentDidMount = () => {
     getGames()
       .then(games => this.setState({ games }))
       .catch(err => console.log(err))
   }
 
-  render() {
-    const games = this.state.games
+  render = () => {
+    const { games } = this.state
+
     return (
       <div className="Games">
         {games.length ? (
