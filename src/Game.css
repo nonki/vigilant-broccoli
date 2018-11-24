@@ -28,11 +28,11 @@
 }
 
 .revealed.redeemed {
-  background-color: var(--color4) !important;
+  background-color: var(--color2) !important;
 }
 
 .revealed {
-  background-color: var(--color2) !important;
+  background-color: var(--color1--muted) !important;
   -moz-transition: 1s all;
   -o-transition: 1s all;
   -webkit-transition: 1s all;

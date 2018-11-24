@@ -2,10 +2,15 @@
   --base-spacing: 20px;
 
   --color1: rgba(255, 210, 250, 0.5);
-  --color2: rgba(255, 254, 244, 1);
-  --color3: rgba(242, 255, 251, 1);
-  --color4: rgba(211, 214, 232, 1);
-  --color5: rgba(232, 200, 179, 1);
+  --color1--muted: rgba(255, 210, 250, 0.2);
+  --color2: rgba(255, 254, 244, 0.5);
+  --color2--muted: rgba(255, 254, 244, 0.2);
+  --color3: rgba(242, 255, 251, 0.5);
+  --color3--muted: rgba(242, 255, 251, 0.2);
+  --color4: rgba(211, 214, 232, 0.5);
+  --color4--muted: rgba(211, 214, 232, 0.2);
+  --color5: rgba(232, 200, 179, 0.5);
+  --color5--muted: rgba(252, 220, 199, 0.2);
 
   --textcolor1: rgba(255, 255, 255, 1);
   --textcolor2: rgba(0, 0, 0, 1);
