@@ -22,9 +22,9 @@ class Games extends Component {
     const games = this.state.games
     return (
       <div className="Games">
-        {games.length && (
+        {games.length ? (
           games.map(el => <Game key={el.id} {...el} />)
-        )}
+        ): ''}
       </div>
     )
   }
