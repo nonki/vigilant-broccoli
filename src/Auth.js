@@ -17,6 +17,9 @@ const styles = theme => ({
     textAlign: 'center',
     padding: theme.spacing.unit,
     width: '100%',
+    position: 'fixed',
+    top: '50%',
+    transform: 'translate(0%, -50%)',
   },
   textArea: {
     margin: theme.spacing.unit,
