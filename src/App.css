@@ -42,8 +42,21 @@ div#root {
   -webkit-box-shadow: 0px 6px 24px -1px rgba(30,30,30,0.4);
   -moz-box-shadow: 0px 6px 24px -1px rgba(30,30,30,0.4);
   box-shadow: 0px 6px 24px -1px rgba(30,30,30,0.4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
-.BirthdayMessage .part1 {
+.BirthdayMessage .Title {
+  width: 100%;
+}
+
+.BirthdayMessage .Blurb {
+  max-width: 1000px;
+}
+
+.BirthdayMessage .Blurb .part1 {
   padding: var(--base-spacing);
 }
