@@ -25,6 +25,14 @@ body {
   background-color: var(--color2)
 }
 
+div#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
 .BirthdayMessage {
   padding: var(--base-spacing);
   text-align: center;

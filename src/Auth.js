@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { checkAuth } from './Api.js';
-import './Auth.css';
 
 import { withStyles  } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -14,22 +13,34 @@ import TextField from '@material-ui/core/TextField';
 const styles = theme => ({
   container: {
     display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
+    justifyContent: 'center',
     textAlign: 'center',
     padding: theme.spacing.unit,
-    maxWidth: '400px',
+    width: '100%',
+  },
+  textArea: {
+    margin: theme.spacing.unit,
+  },
+  button: {
+    margin: theme.spacing.unit,
   },
 });
 
-class Auth extends Component {
-  state = {
+class Auth extends Component { state = {
     password: '',
     open: false,
   };
 
-  handleChange(e) {
-    this.setState({password: e.target.value});
+  handleChange = (e) => {
+    const password = e.target.value;
+    this.setState({ password });
+  }
+
+  handleKeyPress = (e) => {
+    const keyCode = e.charCode;
+    if (keyCode === 13) {
+      this.handleAuth(e);
+    }
   }
 
   handleAuth = (e) => {
@@ -51,7 +62,7 @@ class Auth extends Component {
     const { classes } = this.props;
     const { open, password } = this.state;
     return (
-      <div className="Auth">
+      <div className={classes.container} >
         <Dialog
           variant="outlined"
           open={open} >
@@ -65,24 +76,25 @@ class Auth extends Component {
             </Button>
           </DialogActions>
         </Dialog>
-        <form className={classes.container}>
-          <TextField
-            id="outlined-password-input"
-            label="Password"
-            className={classes.textField}
-            onChange={this.handleChange.bind(this)}
-            value={password}
-            type="password"
-            color="primary"
-            variant="outlined"
-          />
-          <Button
-            color="primary"
-            variant="outlined"
-            onClick={this.handleAuth} >
-            SUBMIT
-          </Button>
-        </form>
+        <TextField
+          id="outlined-password-input"
+          label="Password"
+          className={classes.textArea}
+          onChange={this.handleChange}
+          onKeyPress={this.handleKeyPress}
+          value={password}
+          type="password"
+          color="primary"
+          variant="outlined"
+        />
+        <Button
+          color="primary"
+          variant="outlined"
+          size="medium"
+          className={classes.button}
+          onClick={this.handleAuth} >
+          SUBMIT
+        </Button>
       </div>
     )
   }
