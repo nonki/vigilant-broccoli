@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = theme => ({
   container: {
     textAlign: 'center',
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.light,
     boxShadow: '0px 6px 24px -1px rgba(30,30,30,0.4)',
     display: 'flex',
     flexWrap: 'wrap',
@@ -22,7 +22,7 @@ const styles = theme => ({
     paddingRight: theme.spacing.unit * 10,
     paddingBottom: theme.spacing.unit * 5,
     paddingTop: theme.spacing.unit * 5,
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.secondary.light,
   }
 });
 
