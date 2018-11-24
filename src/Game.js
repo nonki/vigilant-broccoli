@@ -52,7 +52,7 @@ class Game extends Component {
 
     return(
       <Paper className={"Game revealed " + (r && 'redeemed')} game={this.props.id}>
-        <Typography variant="body1" className="key">
+        <Typography color="pink" variant="body1" className="key">
           {g.key}
         </Typography>
         <div className="redeem">
