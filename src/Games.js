@@ -9,6 +9,7 @@ const styles = theme => ({
     display: 'flex',
     width: '100%',
     flexWrap: 'wrap',
+    paddingTop: theme.spacing.unit * 5,
   },
 });
 

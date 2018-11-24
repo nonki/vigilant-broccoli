@@ -3,20 +3,15 @@ import './App.css';
 import Auth from './Auth.js';
 import BirthdayMessage from './BirthdayMessage.js';
 import Games from './Games.js';
-import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
-import pink from '@material-ui/core/colors/pink';
-import red from '@material-ui/core/colors/red';
+import { withStyles  } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: pink[50],
-    },
-    secondary: {
-      main: red[50],
-    },
+const styles = theme => ({
+  container: {
+    backgroundColor: '#FFF',
+    height: '100%',
+    width: '100%',
   },
-});
+})
 
 class App extends Component {
   constructor(props) {
@@ -35,26 +30,23 @@ class App extends Component {
 
   render = () => {
     const { authed } = this.state;
+    const { classes } = this.props;
 
     if (!authed) {
       return (
-        <MuiThemeProvider theme={theme}>
-          <div className="App">
-            <Auth handler={this.setAuthed} />
-          </div>
-        </MuiThemeProvider>
+        <div className={classes.container}>
+          <Auth handler={this.setAuthed} />
+        </div>
       )
     }
 
     return (
-      <MuiThemeProvider theme={theme}>
-        <div className="App">
-          <BirthdayMessage />
-          <Games />
-        </div>
-      </MuiThemeProvider>
+      <div className={classes.container}>
+        <BirthdayMessage />
+        <Games />
+      </div>
     );
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

@@ -4,9 +4,7 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   container: {
-    padding: theme.spacing.unit,
     textAlign: 'center',
-    marginBottom: '40px',
     backgroundColor: theme.palette.primary.main,
     boxShadow: '0px 6px 24px -1px rgba(30,30,30,0.4)',
     display: 'flex',
@@ -16,14 +14,15 @@ const styles = theme => ({
   },
   title: {
     width: '100%',
-    paddingBottom: '50px',
-    paddingTop: '70px',
+    paddingBottom: theme.spacing.unit * 5,
+    paddingTop: theme.spacing.unit * 10,
   },
   blurb: {
-    paddingLeft: '10%',
-    paddingRight: '10%',
-    paddingBottom: '30px',
-    color: theme.palette.secondary,
+    paddingLeft: theme.spacing.unit * 10,
+    paddingRight: theme.spacing.unit * 10,
+    paddingBottom: theme.spacing.unit * 5,
+    paddingTop: theme.spacing.unit * 5,
+    backgroundColor: theme.palette.secondary.main,
   }
 });
 
@@ -32,7 +31,7 @@ const BirthdayMessage = (props) => {
 
   return (
     <div className={classes.container}>
-      <Typography color="textPrimary" variant="h2" className={classes.title}>
+      <Typography variant="h2" className={classes.title}>
         Happy Birthday!
       </Typography>
       <div className={classes.blurb}>
