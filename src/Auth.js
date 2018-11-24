@@ -33,10 +33,10 @@ class Auth extends Component {
       <div className="Auth">
         <form className="auth--parent" onSubmit={this.handleSubmit.bind(this)}>
           <div className="auth--child">
-            <Input type="password" placeholder="password" className="site-password" value={this.state.password} onChange={this.handleChange.bind(this)} />
+            <Input type="password" variant="contained" placeholder="" className="site-password" value={this.state.password} onChange={this.handleChange.bind(this)} />
           </div>
           <div className="auth--child">
-            <Button type="submit">Submit</Button>
+            <Button variant="outlined" type="submit">Submit</Button>
           </div>
         </form>
       </div>
