@@ -3,6 +3,7 @@ import { getGame } from './Api.js';
 import './Game.css';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 
 class Game extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Game extends Component {
     this.state = {
       id: props.id,
       game: null,
-      redeemed: redeemed
+      redeemed: redeemed,
+      revealed: redeemed
     }
   }
 
@@ -29,16 +31,27 @@ class Game extends Component {
       .catch(err => console.debug(err));
   }
 
+  reveal() {
+    this.setState({ revealed: true });
+  }
+
   render() {
-    if (this.state.game == null) {
-      return null
+    const r = this.state.redeemed
+    const v = this.state.revealed
+    const g = this.state.game
+
+    if (!g || !v) {
+      return (
+        <Paper className={"Game unrevealed"} game={this.props.id} onClick={this.reveal.bind(this)} >
+          <Typography variant="button">
+            Click to reveal
+          </Typography>
+        </Paper>
+      )
     }
 
-    const r = this.state.redeemed
-    const g = this.state.game
     return(
-      <Paper className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.gameId}>
-        <div className="title">{g.title}</div>
+      <Paper className={"Game " + (r ? 'redeemed' : 'not-redeemed')} game={this.props.id}>
         <div className="key">
           {g.key}
         </div>
