@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
-import './Games.css'
 import Game from './Game.js';
 import { getGames } from './Api.js'
+
+import { withStyles  } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    width: '100%',
+    flexWrap: 'wrap',
+  },
+});
 
 class Games extends Component {
   state = {
@@ -15,10 +24,11 @@ class Games extends Component {
   }
 
   render = () => {
-    const { games } = this.state
+    const { games }   = this.state
+    const { classes } = this.props;
 
     return (
-      <div className="Games">
+      <div className={classes.container}>
         {games.length ? (
           games.map(el => <Game key={el.id} {...el} />)
         ): ''}
@@ -27,4 +37,4 @@ class Games extends Component {
   }
 }
 
-export default Games;
+export default withStyles(styles)(Games);
