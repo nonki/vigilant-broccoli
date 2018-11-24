@@ -2,46 +2,90 @@ import React, { Component } from 'react';
 import { checkAuth } from './Api.js';
 import './Auth.css';
 
+import { withStyles  } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogActions from '@material-ui/core/DialogActions';
+import TextField from '@material-ui/core/TextField';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignContent: 'center',
+    textAlign: 'center',
+    padding: theme.spacing.unit,
+    maxWidth: '400px',
+  },
+});
 
 class Auth extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { password: '' };
-  }
+  state = {
+    password: '',
+    open: false,
+  };
 
   handleChange(e) {
     this.setState({password: e.target.value});
   }
 
-  handleSubmit(e) {
+  handleAuth = (e) => {
     e.preventDefault();
     checkAuth(this.state.password).then(res => {
-      this.setState({password: ''});
       if (!res) {
-        alert('Wrong Password Scrub');
+        this.setState({ password: '', open: true })
       }
 
       this.props.handler(res);
     });
   }
 
+  handleClose = (e) => {
+    this.setState({ open: false })
+  }
+
   render() {
+    const { classes } = this.props;
+    const { open, password } = this.state;
     return (
       <div className="Auth">
-        <form className="auth--parent" onSubmit={this.handleSubmit.bind(this)}>
-          <div className="auth--child">
-            <Input type="password" variant="contained" placeholder="" className="site-password" value={this.state.password} onChange={this.handleChange.bind(this)} />
-          </div>
-          <div className="auth--child">
-            <Button variant="outlined" type="submit">Submit</Button>
-          </div>
+        <Dialog
+          variant="outlined"
+          open={open} >
+          <DialogTitle>Oops!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>Wrong Password :c</DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button color="primary" onClick={this.handleClose}>
+              OK
+            </Button>
+          </DialogActions>
+        </Dialog>
+        <form className={classes.container}>
+          <TextField
+            id="outlined-password-input"
+            label="Password"
+            className={classes.textField}
+            onChange={this.handleChange.bind(this)}
+            value={password}
+            type="password"
+            color="primary"
+            variant="outlined"
+          />
+          <Button
+            color="primary"
+            variant="outlined"
+            onClick={this.handleAuth} >
+            SUBMIT
+          </Button>
         </form>
       </div>
     )
   }
 }
 
-export default Auth;
+export default withStyles(styles)(Auth);

@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import Auth from './Auth.js';
 import Games from './Games.js';
+import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
+import pink from '@material-ui/core/colors/pink';
+import purple from '@material-ui/core/colors/purple';
 import Typography from '@material-ui/core/Typography';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: pink,
+    secondary: purple,
+  },
+});
 
 class App extends Component {
   constructor(props) {
@@ -23,17 +33,21 @@ class App extends Component {
   render() {
     if (!this.state.authed) {
       return (
-        <div className="App">
-          <Auth handler={this.setAuthed.bind(this)} />
-        </div>
+        <MuiThemeProvider theme={theme}>
+          <div className="App">
+            <Auth handler={this.setAuthed.bind(this)} />
+          </div>
+        </MuiThemeProvider>
       )
     }
 
     return (
-      <div className="App">
-        <BirthdayMessage />
-        <Games />
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <div className="App">
+          <BirthdayMessage />
+          <Games />
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
