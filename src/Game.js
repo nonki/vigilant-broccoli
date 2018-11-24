@@ -46,7 +46,7 @@ class Game extends Component {
     if (!game || !revealed) {
       return (
         <Paper className={"Game unrevealed"} game={id} onClick={this.reveal} >
-          <Typography variant="button">
+          <Typography color="primary" variant="button">
             Click to reveal
           </Typography>
         </Paper>
@@ -57,11 +57,11 @@ class Game extends Component {
 
     return(
       <Paper className={"Game revealed " + (redeemed ? 'redeemed' : '')} game={id}>
-        <Typography color="pink" variant="body1" className="key">
+        <Typography color="primary" variant="body1" className="key">
           {key}
         </Typography>
         <div className="redeem">
-          <Button variant="outlined" onClick={this.releaseLink}>Redeem</Button>
+          <Button color="primary" variant="outlined" onClick={this.releaseLink}>Redeem</Button>
         </div>
       </Paper>
     )
