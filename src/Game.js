@@ -9,40 +9,43 @@ class Game extends Component {
   constructor(props) {
     super(props);
 
-    const redeemed = localStorage.getItem(`game-${props.id}`);
+    const { id } = this.props
+
+    const redeemed = localStorage.getItem(`game-${id}`);
     this.state = {
-      id: props.id,
+      id: id,
       game: null,
       redeemed: redeemed,
       revealed: redeemed
     }
   }
 
-  _releaseLink(key, e) {
-    e.preventDefault();
+  releaseLink = () => {
+    const { id, game: { key } } = this.state
     window.open(`https://store.steampowered.com/account/registerkey?key=${key}`, "_blank");
+
     this.setState({ redeemed: true })
-    localStorage.setItem(`game-${this.state.id}`, '1');
+    localStorage.setItem(`game-${id}`, '1');
   }
 
-  componentDidMount() {
-    getGame(this.state.id)
+  componentDidMount = () => {
+    const { id } = this.state;
+
+    getGame(id)
       .then(game => this.setState({ game }))
       .catch(err => console.debug(err));
   }
 
-  reveal() {
+  reveal = () => {
     this.setState({ revealed: true });
   }
 
-  render() {
-    const r = this.state.redeemed
-    const v = this.state.revealed
-    const g = this.state.game
+  render = () => {
+    const { id, game, redeemed, revealed } = this.state;
 
-    if (!g || !v) {
+    if (!game || !revealed) {
       return (
-        <Paper className={"Game unrevealed"} game={this.props.id} onClick={this.reveal.bind(this)} >
+        <Paper className={"Game unrevealed"} game={id} onClick={this.reveal} >
           <Typography variant="button">
             Click to reveal
           </Typography>
@@ -50,13 +53,15 @@ class Game extends Component {
       )
     }
 
+    const { key } = game;
+
     return(
-      <Paper className={"Game revealed " + (r ? 'redeemed' : '')} game={this.props.id}>
+      <Paper className={"Game revealed " + (redeemed ? 'redeemed' : '')} game={id}>
         <Typography color="pink" variant="body1" className="key">
-          {g.key}
+          {key}
         </Typography>
         <div className="redeem">
-          <Button variant="outlined" onClick={this._releaseLink.bind(this, g.key)}>Redeem</Button>
+          <Button variant="outlined" onClick={this.releaseLink}>Redeem</Button>
         </div>
       </Paper>
     )
