@@ -16,10 +16,6 @@
   --textcolor2: rgba(0, 0, 0, 1);
 }
 
-.App {
-  background-color: var(--color2)
-}
-
 .BirthdayMessage {
   padding: var(--base-spacing);
   text-align: center;
