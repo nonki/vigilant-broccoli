@@ -4,6 +4,7 @@ import Auth from './Auth.js';
 import BirthdayMessage from './BirthdayMessage.js';
 import Games from './Games.js';
 import { withStyles  } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   container: {
@@ -34,17 +35,17 @@ class App extends Component {
 
     if (!authed) {
       return (
-        <div className={classes.container}>
+        <Paper className={classes.container}>
           <Auth handler={this.setAuthed} />
-        </div>
+        </Paper>
       )
     }
 
     return (
-      <div className={classes.container}>
+      <Paper className={classes.container}>
         <BirthdayMessage />
         <Games />
-      </div>
+      </Paper>
     );
   }
 }
