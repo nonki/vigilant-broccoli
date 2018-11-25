@@ -8,7 +8,6 @@ const styles = theme => ({
   container: {
     display: 'flex',
     width: '100%',
-    height: '100%',
     flexWrap: 'wrap',
     paddingTop: theme.spacing.unit * 5,
     backgroundColor: theme.palette.primary.light,
