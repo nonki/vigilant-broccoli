@@ -23,7 +23,21 @@ const styles = theme => ({
   },
   textArea: {
     margin: theme.spacing.unit,
+    color: theme.palette.secondary.main,
+    borderColor: theme.palette.secondary.main,
   },
+  cssLabel: {
+    '&$cssFocused': {
+      color: theme.palette.secondary.main,
+    },
+  },
+  cssFocused: {},
+  cssOutlinedInput: {
+    '&$cssFocused $notchedOutline': {
+      borderColor: theme.palette.secondary.main,
+    },
+  },
+  notchedOutline: {},
   button: {
     margin: theme.spacing.unit,
   },
@@ -74,27 +88,39 @@ class Auth extends Component { state = {
             <DialogContentText>Wrong Password :c</DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button color="primary" onClick={this.handleClose}>
+            <Button color="secondary" onClick={this.handleClose}>
               OK
             </Button>
           </DialogActions>
         </Dialog>
         <TextField
-          id="outlined-password-input"
           label="Password"
           className={classes.textArea}
           onChange={this.handleChange}
           onKeyPress={this.handleKeyPress}
           value={password}
           type="password"
-          color="primary"
+          autoFocus={true}
           variant="outlined"
+          InputLabelProps={{
+            classes: {
+              root: classes.cssLabel,
+              focused: classes.cssFocused,
+            },
+          }}
+          InputProps={{
+            classes: {
+              root: classes.cssOutlinedInput,
+              focused: classes.cssFocused,
+              notchedOutline: classes.notchedOutline,
+            },
+          }}
         />
         <Button
-          color="primary"
           variant="outlined"
           size="medium"
           className={classes.button}
+          color="secondary"
           onClick={this.handleAuth} >
           SUBMIT
         </Button>

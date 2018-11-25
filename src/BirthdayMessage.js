@@ -6,7 +6,7 @@ const styles = theme => ({
   container: {
     textAlign: 'center',
     backgroundColor: theme.palette.primary.light,
-    boxShadow: '0px 6px 24px -1px rgba(30,30,30,0.4)',
+    boxShadow: theme.shadows[5],
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
