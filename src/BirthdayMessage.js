@@ -14,6 +14,8 @@ const styles = theme => ({
   },
   title: {
     width: '100%',
+    paddingLeft: theme.spacing.unit * 5,
+    paddingRight: theme.spacing.unit * 5,
     paddingBottom: theme.spacing.unit * 5,
     paddingTop: theme.spacing.unit * 10,
   },

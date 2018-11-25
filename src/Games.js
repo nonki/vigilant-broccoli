@@ -10,6 +10,8 @@ const styles = theme => ({
     width: '100%',
     flexWrap: 'wrap',
     paddingTop: theme.spacing.unit * 5,
+    backgroundColor: theme.palette.primary.light,
+    marginBottom: theme.spacing.unit,
   },
 });
 
