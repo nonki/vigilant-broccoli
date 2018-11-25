@@ -91,12 +91,12 @@ class Game extends Component {
       )
     }
 
-    const { key } = game;
+    const { title } = game;
 
     return(
       <Paper className={classNames([classes.container, classes.revealed])} game={id}>
         <Typography variant="body1" className={classes.key}>
-          {key}
+          {title}
         </Typography>
         <div className={classes.redeem}>
           <Button variant="outlined" onClick={this.releaseLink}>Redeem</Button>
