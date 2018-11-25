@@ -100,7 +100,6 @@ class Auth extends Component { state = {
           onKeyPress={this.handleKeyPress}
           value={password}
           type="password"
-          autoFocus={true}
           variant="outlined"
           InputLabelProps={{
             classes: {
