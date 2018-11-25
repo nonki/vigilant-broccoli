@@ -78,7 +78,7 @@ class Game extends Component {
   }
 
   render = () => {
-    const { id, game, redeemed, revealed } = this.state;
+    const { id, game, revealed } = this.state;
     const { classes } = this.props;
 
     if (!game || !revealed) {
