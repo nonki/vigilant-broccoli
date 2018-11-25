@@ -10,6 +10,7 @@ const styles = theme => ({
   container: {
     height: '100%',
     width: '100%',
+    backgroundColor: theme.palette.primary.light,
   },
 })
 
