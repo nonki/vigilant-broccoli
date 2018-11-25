@@ -30,14 +30,14 @@ const styles = theme => ({
     flexGrow: '1',
   },
   revealed: {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.secondary.light,
     transition: '0.7s all',
   },
   unrevealed: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     transition: '0.3s all',
     '&:hover': {
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: theme.palette.secondary.dark,
     },
   },
 })

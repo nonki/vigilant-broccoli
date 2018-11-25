@@ -7,7 +7,7 @@ import { withStyles  } from '@material-ui/core/styles';
 
 const styles = theme => ({
   container: {
-    backgroundColor: '#FFF',
+    backgroundColor: theme.palette.primary.light,
     height: '100%',
     width: '100%',
   },
