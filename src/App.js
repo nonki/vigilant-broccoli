@@ -17,14 +17,14 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    const isAuthed = localStorage.getItem('authed');
+    const isAuthed = localStorage.getItem('authed-new');
     this.state = {
       authed: isAuthed
     }
   }
 
   setAuthed = (isAuthed) => {
-    localStorage.setItem('authed', isAuthed ? '1' : '');
+    localStorage.setItem('authed-new', isAuthed ? '1' : '');
     this.setState({authed: isAuthed});
   }
 
