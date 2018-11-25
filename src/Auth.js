@@ -28,8 +28,9 @@ const styles = theme => ({
   },
   cssLabel: {
     '&$cssFocused': {
-      color: theme.palette.secondary.main,
+      color: theme.palette.common.white,
     },
+    color: theme.palette.common.white,
   },
   cssFocused: {},
   cssOutlinedInput: {
@@ -40,6 +41,7 @@ const styles = theme => ({
   notchedOutline: {},
   button: {
     margin: theme.spacing.unit,
+    borderColor: theme.palette.common.white,
   },
 });
 
@@ -120,7 +122,11 @@ class Auth extends Component { state = {
           size="medium"
           className={classes.button}
           color="secondary"
-          onClick={this.handleAuth} >
+          onClick={this.handleAuth}
+          classes={{
+            root: [classes.cssOutlinedButton],
+            label: [classes.cssLabel],
+          }} >
           SUBMIT
         </Button>
       </div>
