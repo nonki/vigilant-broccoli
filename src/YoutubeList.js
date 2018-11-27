@@ -1,4 +1,5 @@
 import React from 'react';
+import YoutubeVideo from './YoutubeVideo.js';
 import { withStyles  } from '@material-ui/core/styles';
 import withWidth from '@material-ui/core/withWidth';
 import GridList from '@material-ui/core/GridList';
@@ -28,31 +29,31 @@ const gridWidthMap = {
   xl: 3.4,
 }
 
-const YoutubeList = (props) => {
-  const { classes, width } = props;
+const tileData = [
+  {
+    title: 'Kailee Morgue - Discovery',
+    id: '4XZYws3wV-g',
+  },
+  {
+    title: 'Ashe - Someone to Lose',
+    id: 'InBP_pOp4bs',
+  },
+  {
+    title: 'Ride - Dreams Burn Down',
+    id: 'tsmHP3ce010',
+  },
+  {
+    title: 'girl in red - i wanna be your girlfriend',
+    id: 'COOBN-cdJbo',
+  },
+  {
+    title: 'EXES - Taxi',
+    id: 'mcjAf9USlNU',
+  },
+];
 
-  const tileData = [
-    {
-      title: 'Kailee Morgue - Discovery',
-      id: '4XZYws3wV-g',
-    },
-    {
-      title: 'Ashe - Someone to Lose',
-      id: 'InBP_pOp4bs',
-    },
-    {
-      title: 'Ride - Dreams Burn Down',
-      id: 'tsmHP3ce010',
-    },
-    {
-      title: 'girl in red - i wanna be your girlfriend',
-      id: 'COOBN-cdJbo',
-    },
-    {
-      title: 'EXES - Taxi',
-      id: 'mcjAf9USlNU',
-    },
-  ]
+const YoutubeList = props => {
+  const { classes, width } = props;
 
   const cols = gridWidthMap[width]
   return (
@@ -60,15 +61,7 @@ const YoutubeList = (props) => {
       <GridList className={classes.gridList} cols={cols}>
         {tileData.map(tile => (
           <GridListTile key={tile.id}>
-            <iframe
-              title={tile.title}
-              width='100%'
-              height='100%'
-              src={`https://www.youtube.com/embed/${tile.id}`}
-              frameBorder="0"
-              allow="encrypted-media;"
-              allowFullScreen >
-            </iframe>
+            <YoutubeVideo {...tile} />
           </GridListTile>
         ))}
       </GridList>
