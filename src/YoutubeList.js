@@ -33,12 +33,16 @@ const YoutubeList = (props) => {
 
   const tileData = [
     {
-      title: 'Ride - Dreams Burn Down',
-      id: 'tsmHP3ce010',
-    },
-    {
       title: 'Kailee Morgue - Discovery',
       id: '4XZYws3wV-g',
+    },
+    {
+      title: 'Ashe - Someone to Lose',
+      id: 'InBP_pOp4bs',
+    },
+    {
+      title: 'Ride - Dreams Burn Down',
+      id: 'tsmHP3ce010',
     },
     {
       title: 'girl in red - i wanna be your girlfriend',
@@ -47,10 +51,6 @@ const YoutubeList = (props) => {
     {
       title: 'EXES - Taxi',
       id: 'mcjAf9USlNU',
-    },
-    {
-      title: 'Ashe - Someone to Lose',
-      id: 'InBP_pOp4bs',
     },
   ]
 
