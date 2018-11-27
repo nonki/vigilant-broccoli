@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles  } from '@material-ui/core/styles';
-import withWidth, { isWidthUp, isWidthDown  } from '@material-ui/core/withWidth';
+import withWidth from '@material-ui/core/withWidth';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
