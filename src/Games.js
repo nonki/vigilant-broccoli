@@ -12,6 +12,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 5,
     backgroundColor: theme.palette.primary.light,
     marginBottom: theme.spacing.unit,
+    justifyContent: 'space-evenly',
   },
 });
 

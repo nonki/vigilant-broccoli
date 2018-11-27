@@ -19,6 +19,7 @@ const styles = theme => ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     overflow: 'hidden',
+    flexBasis: 'auto',
   },
   key: {
     flexGrow: '2',
