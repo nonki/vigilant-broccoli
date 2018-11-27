@@ -85,7 +85,7 @@ class Game extends Component {
 
     if (!game || !revealed) {
       return (
-        <Paper className={classNames([classes.container, classes.unrevealed])} game={id} onClick={this.reveal} >
+        <Paper className={classNames([classes.container, classes.unrevealed])} onClick={this.reveal} >
           <Typography variant="button">
             Click to reveal
           </Typography>
@@ -96,7 +96,7 @@ class Game extends Component {
     const { title } = game;
 
     return(
-      <Paper className={classNames([classes.container, classes.revealed])} game={id}>
+      <Paper className={classNames([classes.container, classes.revealed])}>
         <Typography variant="body1" className={classes.key}>
           {title}
         </Typography>
