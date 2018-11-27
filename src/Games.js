@@ -7,9 +7,9 @@ import { withStyles  } from '@material-ui/core/styles';
 const styles = theme => ({
   container: {
     display: 'flex',
-    width: '100%',
     flexWrap: 'wrap',
     paddingTop: theme.spacing.unit * 5,
+    padding: theme.spacing.unit,
     backgroundColor: theme.palette.primary.light,
     justifyContent: 'space-evenly',
   },
