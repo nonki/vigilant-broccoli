@@ -12,10 +12,10 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     textAlign: 'center',
     flexGrow: '1',
+    flexShrink: '1',
     display: 'flex',
-    minWidth: '250px',
-    minHeight: '40px',
-    maxHeight: '120px',
+    width: '250px',
+    height: '40px',
     justifyContent: 'space-evenly',
     alignItems: 'center',
     overflow: 'hidden',
@@ -23,6 +23,8 @@ const styles = theme => ({
   },
   key: {
     flexGrow: '2',
+    flexShrink: '1',
+    flexBasis: 'auto',
     fontSize: '0.8rem',
     fontWeight: '500',
   },
@@ -31,11 +33,11 @@ const styles = theme => ({
   },
   revealed: {
     backgroundColor: theme.palette.secondary.light,
-    transition: '0.7s all',
+    transition: '0.8s all',
   },
   unrevealed: {
     backgroundColor: theme.palette.secondary.main,
-    transition: '0.3s all',
+    transition: '0.4s all',
     '&:hover': {
       backgroundColor: theme.palette.secondary.dark,
     },
