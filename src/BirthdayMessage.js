@@ -1,4 +1,5 @@
 import React from 'react';
+import YoutubeList from './YoutubeList.js';
 import { withStyles  } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
@@ -43,9 +44,11 @@ const BirthdayMessage = (props) => {
           <br />
           Pellentesque suscipit sem a quam auctor venenatis. Phasellus velit arcu, tristique et eros eget, euismod blandit ipsum. Donec sapien felis, fringilla in auctor non, faucibus eget massa. Duis consectetur, massa id fringilla tincidunt, sapien est condimentum dui, et vestibulum dui mauris id lectus. In mattis laoreet mauris, vestibulum vulputate erat rhoncus nec. Etiam nisi est, vulputate nec sapien ac, efficitur ultrices risus. Maecenas elementum fermentum hendrerit. Fusce id dui eget est aliquet elementum. Integer vel ultrices justo.
         </Typography>
+        <YoutubeList />
       </Paper>
     </Paper>
   )
 }
+
 
 export default withStyles(styles)(BirthdayMessage);
