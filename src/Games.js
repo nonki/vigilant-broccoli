@@ -33,7 +33,7 @@ class Games extends Component {
     return (
       <div className={classes.container}>
         {games.length ? (
-          games.map(el => <Game key={el.id} {...el} />)
+          games.map(el => <Game key={el} id={el} />)
         ): ''}
       </div>
     )
