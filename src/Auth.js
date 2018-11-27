@@ -45,7 +45,8 @@ const styles = theme => ({
   },
 });
 
-class Auth extends Component { state = {
+class Auth extends Component {
+  state = {
     password: '',
     open: false,
   };
@@ -64,7 +65,9 @@ class Auth extends Component { state = {
 
   handleAuth = (e) => {
     e.preventDefault();
-    checkAuth(this.state.password).then(res => {
+
+    const { password } = this.state
+    checkAuth(password).then(res => {
       if (!res) {
         this.setState({ password: '', open: true })
       }
