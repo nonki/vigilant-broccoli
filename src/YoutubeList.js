@@ -5,18 +5,18 @@ import GridListTile from '@material-ui/core/GridListTile';
 
 const styles = theme => ({
   root: {
-    marginTop: theme.spacing.unit * 5,
-    margin: theme.spacing.unit,
+    padding: theme.spacing.unit * 5,
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
   },
   gridList: {
-    maxWidth: 600,
+    maxWidth: 800,
     flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
+    boxShadow: theme.shadows[15],
   },
 });
 
@@ -48,7 +48,7 @@ const YoutubeList = (props) => {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={1.2}>
+      <GridList className={classes.gridList} cols={1.4}>
         {tileData.map(tile => (
           <GridListTile key={tile.id}>
             <iframe
