@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles  } from '@material-ui/core/styles';
+import withWidth, { isWidthUp, isWidthDown  } from '@material-ui/core/withWidth';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 
@@ -12,7 +13,6 @@ const styles = theme => ({
     overflow: 'hidden',
   },
   gridList: {
-    maxWidth: 800,
     flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
@@ -20,8 +20,16 @@ const styles = theme => ({
   },
 });
 
+const gridWidthMap = {
+  xs: 1.4,
+  sm: 2.4,
+  md: 3.4,
+  lg: 3.4,
+  xl: 3.4,
+}
+
 const YoutubeList = (props) => {
-  const { classes } = props;
+  const { classes, width } = props;
 
   const tileData = [
     {
@@ -46,9 +54,10 @@ const YoutubeList = (props) => {
     },
   ]
 
+  const cols = gridWidthMap[width]
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={1.4}>
+      <GridList className={classes.gridList} cols={cols}>
         {tileData.map(tile => (
           <GridListTile key={tile.id}>
             <iframe
@@ -67,4 +76,4 @@ const YoutubeList = (props) => {
   );
 }
 
-export default withStyles(styles)(YoutubeList);
+export default withWidth()(withStyles(styles)(YoutubeList));
