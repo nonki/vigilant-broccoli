@@ -21,10 +21,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 10,
   },
   blurb: {
-    paddingLeft: theme.spacing.unit * 5,
-    paddingRight: theme.spacing.unit * 5,
-    paddingBottom: theme.spacing.unit * 5,
-    paddingTop: theme.spacing.unit * 5,
+    padding: theme.spacing.unit * 5,
     backgroundColor: theme.palette.secondary.main,
     boxShadow: theme.shadows[10],
   }
