@@ -17,14 +17,14 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    const isAuthed = localStorage.getItem('authed-new');
+    const isAuthed = localStorage.getItem(process.env.REACT_APP_TOKEN_KEY);
     this.state = {
       authed: isAuthed
     }
   }
 
   setAuthed = (isAuthed) => {
-    localStorage.setItem('authed-new', isAuthed ? '1' : '');
+    isAuthed && localStorage.setItem(process.env.REACT_APP_TOKEN_KEY, '1');
     this.setState({authed: isAuthed});
   }
 
