@@ -25,7 +25,7 @@ const styles = theme => ({
     flexGrow: '2',
     flexShrink: '1',
     flexBasis: 'auto',
-    fontSize: '0.8rem',
+    fontSize: '0.9rem',
     fontWeight: '500',
   },
   button: {
