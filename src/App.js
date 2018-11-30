@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import Auth from './Auth.js';
 import BirthdayMessage from './BirthdayMessage.js';
-import Games from './Games.js';
-import { withStyles  } from '@material-ui/core/styles';
+import HiddenGames from './HiddenGames.js';
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   container: {
     height: '100%',
     width: '100%',
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary.main,
   },
 })
 
@@ -19,8 +19,8 @@ class App extends Component {
 
     const isAuthed = localStorage.getItem(process.env.REACT_APP_TOKEN_KEY);
     this.state = {
-      authed: isAuthed
-    }
+      authed: isAuthed,
+    };
   }
 
   setAuthed = (isAuthed) => {
@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className={classes.container}>
         <BirthdayMessage />
-        <Games />
+        <HiddenGames />
       </div>
     );
   }

@@ -8,9 +8,8 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    paddingTop: theme.spacing.unit * 5,
     padding: theme.spacing.unit,
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary.main,
     justifyContent: 'space-evenly',
   },
 });
@@ -28,10 +27,10 @@ class Games extends Component {
 
   render = () => {
     const { games }   = this.state
-    const { classes } = this.props;
+    const { classes, styles, childRef } = this.props;
 
     return (
-      <div className={classes.container}>
+      <div className={classes.container} ref={childRef} styles={styles} >
         {games.length ? (
           games.map(el => <Game key={el} id={el} />)
         ): ''}
