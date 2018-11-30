@@ -31,7 +31,7 @@ const BirthdayMessage = (props) => {
   const { classes } = props;
 
   return (
-    <Paper className={classes.container}>
+    <div className={classes.container}>
       <Typography variant="h2" className={classes.title}>
         Happy Birthday!
       </Typography>
@@ -50,7 +50,7 @@ const BirthdayMessage = (props) => {
     Praesent euismod ligula leo, id laoreet augue ultrices sed. Vivamus efficitur pellentesque leo ac posuere. Aliquam eu lorem at nulla iaculis luctus. Nulla vulputate ligula nibh, vitae congue mauris pellentesque nec. Aenean venenatis, sapien id faucibus malesuada, ipsum enim egestas mauris, eu consectetur erat velit sed nisi. Vivamus semper sed dolor id blandit. Sed eget leo at metus laoreet elementum vestibulum eleifend orci. Pellentesque viverra venenatis ipsum id tincidunt. Curabitur sed massa sit amet mi condimentum pretium. Curabitur nec dolor massa. Sed lacinia lacus vel hendrerit gravida. Morbi tristique, nunc vel iaculis dapibus, turpis nibh tincidunt lorem, sed bibendum tellus dui id erat. Quisque posuere velit at tellus dapibus, eget luctus ex tincidunt. Nulla sed turpis vel quam iaculis sodales vitae in dolor. Nullam vel auctor velit. Cras varius viverra est sit amet accumsan.
         </Typography>
       </Paper>
-    </Paper>
+    </div>
   )
 }
 
