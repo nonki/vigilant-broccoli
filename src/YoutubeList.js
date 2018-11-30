@@ -39,6 +39,14 @@ const tileData = [
     id: 'InBP_pOp4bs',
   },
   {
+    title: 'Ella Vos - Rearrange',
+    id: 'n7Ty9vLxCV8',
+  },
+  {
+    title: 'Chelsea Cutler - The Reason',
+    id: 'YUjEJwfa8wk',
+  },
+  {
     title: 'Ride - Dreams Burn Down',
     id: 'tsmHP3ce010',
   },
