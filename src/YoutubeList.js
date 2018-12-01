@@ -43,8 +43,8 @@ const tileData = [
     id: 'n7Ty9vLxCV8',
   },
   {
-    title: 'Chelsea Cutler - The Reason',
-    id: 'YUjEJwfa8wk',
+    title: 'Catey Shaw - Night Go Slow',
+    id: 'acYpxd17eIc',
   },
   {
     title: 'Ride - Dreams Burn Down',
@@ -57,6 +57,10 @@ const tileData = [
   {
     title: 'EXES - Taxi',
     id: 'mcjAf9USlNU',
+  },
+  {
+    title: 'Chelsea Cutler - The Reason',
+    id: 'YUjEJwfa8wk',
   },
 ];
 
