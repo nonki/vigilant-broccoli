@@ -26,7 +26,7 @@ const gridWidthMap = {
   sm: 2.4,
   md: 3.4,
   lg: 3.4,
-  xl: 3.4,
+  xl: 4.4,
 }
 
 const tileData = [
