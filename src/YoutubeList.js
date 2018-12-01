@@ -39,10 +39,6 @@ const tileData = [
     id: 'InBP_pOp4bs',
   },
   {
-    title: 'Ella Vos - Rearrange',
-    id: 'n7Ty9vLxCV8',
-  },
-  {
     title: 'Catey Shaw - Night Go Slow',
     id: 'acYpxd17eIc',
   },
