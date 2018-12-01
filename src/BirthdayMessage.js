@@ -141,6 +141,9 @@ const BirthdayMessage = props => {
             I actually can't express how much I'm missing you and how much I wish we could spend time together.
             Not talking to you, or hearing your voice, for so long has genuinely been tough at times - sorry to be a creep, but it's true.
             But, I know that we genuinely <i>can't</i> spend time together because you're incredibly busy, and tired, and have important things going on in your life, so I'm perfectly fine waiting until next year when you might have some more time, and I honestly cannot wait.
+            If you still want to spend time together when next year comes around, you better be ready for some anime binging and gaming marathons and shit.
+            Goblin Slayer is a must watch and we've got an absolute ton of games to try out like Destiny 2 and Portal 2 and we never even finished HFF!
+            Though, I'm sure we'll probably just sit there and talk for the entire night and make no progress in any show or game, and I'll love it either way because it'll be time with you.
             I'll be looking forward to it and thinking about you until then!
           </div>
           <div className={classes.blurbSection}>

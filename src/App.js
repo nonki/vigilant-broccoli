@@ -23,9 +23,9 @@ class App extends Component {
     };
   }
 
-  setAuthed = (isAuthed) => {
-    isAuthed && localStorage.setItem(process.env.REACT_APP_TOKEN_KEY, '1');
-    this.setState({authed: isAuthed});
+  setAuthed = secret => {
+    secret && localStorage.setItem(process.env.REACT_APP_TOKEN_KEY, secret);
+    this.setState({authed: true});
   }
 
   render = () => {

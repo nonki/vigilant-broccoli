@@ -70,7 +70,9 @@ class Game extends Component {
   componentDidMount = () => {
     const { id } = this.state;
 
-    getGame(id)
+    const auth = localStorage.getItem(process.env.REACT_APP_TOKEN_KEY);
+
+    getGame(id, auth)
       .then(game => this.setState({ game }))
       .catch(err => console.debug(err));
   }

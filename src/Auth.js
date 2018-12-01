@@ -69,11 +69,11 @@ class Auth extends Component {
     const { password } = this.state
     checkAuth(password).then(res => {
       if (!res) {
-        this.setState({ password: '', open: true })
+        return this.setState({ password: '', open: true })
       }
 
-      this.props.handler(res);
-    });
+      this.props.handler(res.secret);
+    }).catch(err => console.log(err));
   }
 
   handleClose = (e) => {

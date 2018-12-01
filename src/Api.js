@@ -11,7 +11,7 @@ const fetchJSON = path =>
   )
 
 export const getGames = () => fetchJSON('/keys')
-export const getGame = (id) => fetchJSON(`/keys/${id}`)
+export const getGame = (id, secret) => fetchJSON(`/keys/${id}?secret=${secret}`)
 export const checkAuth = (password) =>
   fetch(`${API_BASE}/auth`,
     {
@@ -21,4 +21,4 @@ export const checkAuth = (password) =>
       },
       body: JSON.stringify({ password })
     })
-    .then(res => res.ok);
+    .then(res => res.ok ? res.json() : false);
