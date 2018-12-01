@@ -127,8 +127,7 @@ class Auth extends Component {
           color="secondary"
           onClick={this.handleAuth}
           classes={{
-            root: [classes.cssOutlinedButton],
-            label: [classes.cssLabel],
+            label: classes.cssLabel,
           }} >
           SUBMIT
         </Button>
