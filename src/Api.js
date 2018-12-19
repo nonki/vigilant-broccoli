@@ -6,7 +6,7 @@ const fetchJSON = path =>
       : Promise.reject({
           status: res.status,
           statusText: res.statusText,
-          error: "Request failed"
+          error: "Request failed."
         })
   )
 
